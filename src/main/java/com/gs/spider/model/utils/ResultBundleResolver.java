@@ -27,7 +27,7 @@ public class ResultBundleResolver {
             .registerTypeAdapter(Date.class, (JsonDeserializer<Date>) (json, typeOfT, context) -> {
                 try {
                     return sdf.parse(json.getAsJsonPrimitive().getAsString().replaceAll("\"", ""));
-                } catch (ParseExceptionception e) {
+                } catch (ParseException e) {
                     e.printStackTrace();
                 }
                 return null;
